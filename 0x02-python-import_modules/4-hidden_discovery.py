@@ -4,4 +4,4 @@ if __name__ == "__main__":
     f = dir()
     for i in range(0, len(f)):
         if f[i][:2] != "__":
-        print("{:s}".format(f[i]))
+            print("{:s}".format(f[i]))
