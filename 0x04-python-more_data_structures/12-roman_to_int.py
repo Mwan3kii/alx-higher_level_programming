@@ -1,16 +1,19 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None or type(roman_string) != str:
+    if roman_string is None or not isinstance(roman_string, str):
         return 0
     roman_dict = {
             'I': 1, 'V': 5, 'X': 10, 'L': 50,
             'C': 100, 'D': 500, 'M': 1000
             }
-    numbers = [roman_dict[n] for n in roman_string] + [0]
     total = 0
-    for x in range(len(numbers) - 1):
-        if numbers[x] >= numbers[x + 1]:
-            total += numbers[x]
+    prev_value = 0
+
+    for x in roman_string[::-1]:
+        curr = roman_dict[x]
+        if curr >= prev_value:
+            total += curr
         else:
-            total += numbers[x]
+            total -= curr
+        prev_value = curr
     return total
