@@ -7,3 +7,5 @@ def safe_print_integer_err(value):
     except (ValueError, TypeError) as e:
         print("Expection: {}".format(e), file=sys.stderr)
         return False
+    else:
+        return True
