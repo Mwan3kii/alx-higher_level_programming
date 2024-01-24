@@ -58,6 +58,7 @@ class Square:
         else:
             self.__size = value
 
+    @property
     def position(self):
         """
         Get the position of square.
@@ -67,6 +68,7 @@ class Square:
         """
         return self.__position
 
+    @position.setter
     def position(self, value):
         """
         Sets position of square
