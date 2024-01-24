@@ -8,6 +8,7 @@ size and position properties, area method, and my_print method.
 class Square:
     """
     This is square class.
+
     Attributes:
         __size (int): The size of the square.
         __position (tuple): The position of the square.
@@ -39,8 +40,10 @@ class Square:
     def size(self, value):
         """
         Sets the size of the square.
+
         Args:
             value (int): The size to set.
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
@@ -55,7 +58,7 @@ class Square:
         """
         Retrieves the position of square.
 
-        Return:
+        Returns:
             tuple: position of square.
         """
         return self.__position
@@ -65,8 +68,9 @@ class Square:
 
         Args:
             value (tuple): position to set.
+
         Raises:
-            TypeError: position must be a tuple of 2 positive integers
+            TypeError: position must be a tuple of 2 positive integers.
         """
         if not isinstance(value, tuple) or len(value) != 2 or \
             not all(isinstance(i, int) and i >= 0 for i in value):
