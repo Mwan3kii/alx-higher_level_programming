@@ -8,16 +8,13 @@ class Square:
     This is the Square class.
 
     Attributes:
-        One private attribute so far
+        size (int): size of square.
     """
     def __init__(self, size):
         """the init method.
 
         Args:
-            size: the size of the square
-
-        Returns:
-            size: the size of the square
+            size: the size of the square.
         """
         self.__size = size
         pass
