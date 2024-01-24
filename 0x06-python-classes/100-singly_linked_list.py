@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This is a class Node."""
+
+
 class Node:
     """Defines a node of a singly linked list.
     Attributes:
@@ -28,20 +31,29 @@ class Node:
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
+
     @property
     def next_node(self):
         """Gets the next node of the node"""
         return self.__next_node
+
     @next_node.setter
     def next_node(self, value):
         if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a node object")
         self.__next_node = value
+
+
+"""This is a singly linked list class."""
+
+
 class SinglyLinkedList:
     """Represensts a singly linked list."""
+
     def __init__(self):
         """Initializes a linked list."""
         self.__head = None
+
     def sorted_insert(self, value):
         """Insert a new node to singly linked list.
         Args:
@@ -61,6 +73,7 @@ class SinglyLinkedList:
                 temp = temp.next_node
             new_node.next_node = temp.next_node
             temp.next_node = new_node
+
     def __str__(self):
         """Defines the printd rep of a single linked list."""
         values = []
