@@ -3,6 +3,8 @@
 
 It has one private attribute.
 """
+
+
 class Square:
     """
     This is the Square class.

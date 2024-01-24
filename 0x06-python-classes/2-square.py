@@ -4,6 +4,8 @@ This is a square class.
 
 It defines a class with private attribute size.
 """
+
+
 class Square:
     """This is a Square class.
 

@@ -4,6 +4,8 @@ This is the Square module.
 
 It defines a Square class with private size attribute, size property, area method, and my_print method.
 """
+
+
 class Square:
     """
     This is the Square class.
