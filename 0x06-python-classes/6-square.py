@@ -2,8 +2,7 @@
 """
 This is the Square module.
 
-It defines a Square class with private size and position attributes,
-size and position properties, area method, and my_print method.
+It defines a Square class with its attribtes
 """
 
 
@@ -20,24 +19,26 @@ class Square:
         Initializes a new instance of the Square class.
 
         Args:
-            size (int): The size of the square. Defaults to 0.
-            position (tuple): The position of the square. Defaults to (0, 0).
+            size (int): The size of the square
+            position (tuple): the position of size.
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
-            ValueError: If size is less than 0 or position contains negative integers.
+            TypeError: size must be an integer.
+            ValueError: size must be >= 0
         """
         self.__size = size
         self.__position = position
+
     @property
     def size(self):
         """
-        Retrieves the size of the square.
+        Gets the size of the square.
 
         Returns:
             int: The size of the square.
         """
         return self.__size
+
     @size.setter
     def size(self, value):
         """
@@ -56,14 +57,16 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
+
     def position(self):
         """
-        Retrieves the position of square.
+        Get the position of square.
 
         Returns:
             tuple: position of square.
         """
         return self.__position
+
     def position(self, value):
         """
         Sets position of square
@@ -79,14 +82,16 @@ class Square:
                 raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
+
     def area(self):
         """
-        Calculates and returns the area of the square.
+        Calculates the area of the square.
 
         Returns:
             int: The area of the square.
         """
         return self.__size ** 2
+
     def my_print(self):
         """
         Prints the square using '#' characters.
