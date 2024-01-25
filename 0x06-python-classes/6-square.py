@@ -107,5 +107,5 @@ class Square:
         else:
             for _ in range(self.__position[1]):
                 print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            square_lines = [" " * self.__position[0] + "#" * self.__size for _ in range(self.__size)]
+            print("\n".join(square_lines))
