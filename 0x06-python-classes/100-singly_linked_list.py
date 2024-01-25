@@ -8,6 +8,7 @@ class Node:
         data (int): the data of node.
         next_node: the next node.
     """
+
     def __init__(self, data, next_node=None):
         """Initializes new node and data.
         Args:
