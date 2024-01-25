@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This is a magic class."""
+
 import math
 
 
@@ -7,7 +8,7 @@ class MagicClass:
     """This is a magic class.
 
     Attributes:
-            radius: the radius to be used.
+        radius: the radius to be used.
     """
     def __init__(self, radius):
         """
