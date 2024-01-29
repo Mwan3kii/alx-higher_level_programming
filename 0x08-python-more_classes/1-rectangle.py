@@ -4,6 +4,7 @@
 
 class Rectangle:
     """This is a class Rectangle.
+
     Attributes:
             width: The width of rectagle.
             height: The height os rectangle.
@@ -11,9 +12,11 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initializes width and height.
+
         Args:
             width: The width of rectagle.
             height: The height os rectangle.
+
         Raises:
             TypeError: width must be an integer.
             ValueError: width must be >= 0.
@@ -22,18 +25,21 @@ class Rectangle:
         self.__height = height
 
     @property
-    def width(self):
+    def height(self):
         """Gets the width.
+
         Returns:
             width: the width.
         """
-        return self.__width
+        return self.__height
 
-    @width.setter
-    def width(self, value):
+    @height.setter
+    def height(self, value):
         """Sets the width.
+
         Args:
             value (int): the value to set to.
+
         Raises:
             TypeError: width must be an integer.
             ValueError: width must be >= 0.
@@ -43,21 +49,24 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be >= 0")
         else:
-            self.__width = value
+            self.__height = value
 
     @property
-    def height(self):
+    def width(self):
         """Gets the height of it.
+
         Returns:
             height: the height of rectangle.
         """
-        return self.__height
+        return self.__width
 
-    @height.setter
-    def height(self, value):
+    @width.setter
+    def width(self, value):
         """Sets the height of the rectagle.
+
         Args:
             Value (int): the value to be set.
+
         Raises:
             TypeError: width must be an integer.
             ValueError: width must be >= 0.
@@ -67,4 +76,4 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            self.__height = value
+            self.__width = value
