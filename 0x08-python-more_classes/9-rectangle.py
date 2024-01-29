@@ -151,9 +151,9 @@ class Rectangle:
         """Creates new Rectangle instance.
 
         Args:
-            size: Size of square.
+            size (int): Size of square.
 
         Returns:
             Rectangle: The new rectangle rep a square.
         """
-        return cls(size, size)
+        return (cls(size, size))
