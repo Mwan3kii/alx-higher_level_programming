@@ -152,6 +152,7 @@ class Rectangle:
 
         Args:
             size: Size of square.
+
         Returns:
             Rectangle: The new rectangle rep a square.
         """
