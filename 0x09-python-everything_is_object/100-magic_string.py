@@ -1,4 +1,4 @@
 #!/usr/bin/python3g
 def magic_string():
-    s = "BestSchool"
-    return '\n'.join([s + (', ' + s) * i for i in range(10)]) + '$\n'
+    magic_string.n = getattr(magic_string, 'n', 0) + 1
+    return ("BestSchool, " * (magic_string.n - 1) + "BestSchool")
