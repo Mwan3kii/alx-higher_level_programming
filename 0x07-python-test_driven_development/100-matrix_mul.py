@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""This function multiplies 2 matrices."""
+
+
 def matrix_mul(m_a, m_b):
     """Multiplies two matrices.
 
