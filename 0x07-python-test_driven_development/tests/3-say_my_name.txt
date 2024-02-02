@@ -1,0 +1,33 @@
+The ``3-say_my_name.py`` module
+===============================
+
+Using ``say_my_name``
+---------------------
+import module:
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test cases 1: Strings
+>>> say_my_name("Faith", "Owen")
+My name is Faith Owen
+
+Test case 2: Integers
+>>> say_my_name(2, 3)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Test case 3: Empty strings
+>>> say_my_name("", "")
+My name is  
+
+Test case 4: First argument interger
+>>> say_my_name(39, "Faith")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Test case 5: Second argument integer
+>>> say_my_name("Faith", 98)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
