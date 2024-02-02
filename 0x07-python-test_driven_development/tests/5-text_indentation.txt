@@ -1,0 +1,55 @@
+The ``5-text_indentation.py`` module
+====================================
+
+Using ``text_indentation``
+--------------------------
+
+import module:
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test thats simple:
+>>> text_indentation("hello: people")
+hello:
+<BLANKLINE>
+people
+
+Test with 2 delimeters:
+>>> text_indentation(" ? ")
+?
+<BLANKLINE>
+
+Test with newline:
+>>> text_indentation("\n")
+<BLANKLINE>
+
+Test with all delimeters:
+>>> text_indentation("hello. this? is me: yeh")
+hello.
+<BLANKLINE>
+this?
+<BLANKLINE>
+is me:
+<BLANKLINE>
+yeh
+
+Test delimeters itself:
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+Test none delimeters:
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+Test integer:
+>>> text_indentation(67)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
