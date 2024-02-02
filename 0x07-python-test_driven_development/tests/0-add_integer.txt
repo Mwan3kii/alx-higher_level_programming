@@ -1,0 +1,44 @@
+The ``0-add_integer`` module
+============================
+Using ``add_integer``
+---------------------
+Import function from module:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+# Test case 1: Positive integers
+>>> add_integer(1, 2)
+3
+
+# Test case 2: Integer and negative integer
+>>> add_integer(100, -2)
+98
+
+# Test case 3: Only one integer provided (using the default value for b)
+>>> add_integer(2)
+100
+
+# Test case 4: Floats as input
+>>> add_integer(100.3, -2)
+98
+
+# Test case 5: Trying to add an integer with a string
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer
+
+# Test case 6: Trying to add interger with string
+>>> add_integer("hello", 3)
+Traceback (most recent call last):
+   ...
+TypeError: a must be an integer
+
+# Test case 7: None as input
+>>> add_integer(None)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test case 8: Both float values
+>>> add_integer(0.3, 0.4)
+0
