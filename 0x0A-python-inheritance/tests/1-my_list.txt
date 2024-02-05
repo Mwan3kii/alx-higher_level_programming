@@ -1,21 +1,43 @@
 The ``1-my_list.py`` module
 ===========================
 
-Using ``print_sorted``
+Using ``1-my_list``
 ----------------------
 
 Import function from module:
->>> print_sorted = __import__('1-my_list.py').print_sorted
+>>> MyList = __import__('1-my_list.py').MyList
+
 Test one: If the list is empty
->>> my_list = MyList()
->>> my_list.print_sorted()
+>>> my_list1 = MyList()
+>>> my_list1.print_sorted()
 []
 
-Test two: Already sorted list
->>> my_list = MyList([1, 2, 3])
->>> my_list.print_sorted()
-[1, 2, 3]
+Test two: Correct Class Type test:
+>>> ml = MyList()
+>>> type(ml) == MyList
+True
 
-Test three: Negatives and positives
->>> my_list = MyList([3, -4, 1, 5])
->>> my_list.print_sorted()
+Test three: Correct Instance test:
+>>> ml = MyList()
+>>> isinstance(ml, list)
+True
+
+Test four: print_sorted method is an instance method:
+>>> type(MyList.__dict__['print_sorted'])
+<class 'function'>
+
+Test five: Negative ints list test:
+>>> ml = MyList([-1000, -98, -232565, 0, -23423434, -123])
+>>> ml.print_sorted()
+[-23423434, -232565, -1000, -123, -98, 0]
+
+Test six: List already in order:
+>>> ml = MyList([-10, 0, 1, 2, 10, 20, 100])
+>>> ml.print_sorted()
+[-10, 0, 1, 2, 10, 20, 100]
+
+Test seven: Test append:
+>>> ml = MyList()
+>>> ml.append(10)
+>>> ml
+[10]
