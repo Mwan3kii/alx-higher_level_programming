@@ -1,0 +1,21 @@
+The ``1-my_list.py`` module
+===========================
+
+Using ``print_sorted``
+----------------------
+
+Import function from module:
+>>> print_sorted = __import__('1-my_list.py').print_sorted
+Test one: If the list is empty
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+Test two: Already sorted list
+>>> my_list = MyList([1, 2, 3])
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+Test three: Negatives and positives
+>>> my_list = MyList([3, -4, 1, 5])
+>>> my_list.print_sorted()
