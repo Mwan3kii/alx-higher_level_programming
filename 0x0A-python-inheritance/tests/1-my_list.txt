@@ -5,7 +5,7 @@ Using ``1-my_list``
 ----------------------
 
 Import function from module:
->>> MyList = __import__('1-my_list.py').MyList
+>>> MyList = __import__('1-my_list').MyList
 
 Test one: If the list is empty
 >>> my_list1 = MyList()
