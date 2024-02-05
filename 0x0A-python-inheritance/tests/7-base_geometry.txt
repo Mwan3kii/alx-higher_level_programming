@@ -1,0 +1,39 @@
+The ``7-base_geometry`` module
+============================
+
+Using ``BaseGeometry``
+---------------------
+
+Import function from module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test one: Correct Class Type test:
+>>> bg = BaseGeometry()
+>>> type(bg) == BaseGeometry
+True
+
+Test two: integer_validator method ok value:
+>>> bg.integer_validator("bar", 98)
+
+Test three: integer_validator method 0 value:
+>>> bg.integer_validator("bar", 0)
+Traceback (most recent call last):
+ValueError: key must be greater than 0
+
+Test four: integer_validator method list value:
+>>> bg.integer_validator("c", [7])
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Test five: integer_validator method string value:
+>>> bg.integer_validator("hello", "foo")
+Traceback (most recent call last):
+TypeError: Bar must be an integer
+
+Test six: integer_validator method empty string:
+>>> bg.integer_validator(None, 1)
+
+Test seven: integer_validator method float.0 value:
+>>> bg.integer_validator("foo", 6.0)
+Traceback (most recent call last):
+TypeError: foo must be an integer
