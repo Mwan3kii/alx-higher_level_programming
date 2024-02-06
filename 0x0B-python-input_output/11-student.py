@@ -25,11 +25,12 @@ class Student:
         Returns:
             The serialized data.
         """
+        d_attrs = ["first_name", "last_name", "age"]
         if attrs is not None and isinstance(attrs, list):
-            serialized_data = {attr: getattr(self, attr, None) for attr in attrs}
+            serialized = {attr: getattr(self, attr, None) for attr in attrs}
         else:
-            serialized_data = {attr: getattr(self, attr, None) for attr in ["first_name", "last_name", "age"]}
-        return serialized_data
+            serialized = {attr: getattr(self, attr, None) for attr in d_attrs}
+        return serialized
 
     def reload_from_json(self, json):
         """This replaces all atributes os student.
