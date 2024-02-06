@@ -25,8 +25,7 @@ class Student:
         Returns:
             The serialized data.
         """
-        if attrs is not None and isinstance(attrs, list):
-            serialized_data = {attr: getattr(self, attr, None) for attr in attrs}
+        if attrs is None:
+            return self.__dict__
         else:
-            serialized_data = {attr: getattr(self, attr, None) for attr in ["first_name", "last_name", "age"]}
-        return serialized_data
+            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
