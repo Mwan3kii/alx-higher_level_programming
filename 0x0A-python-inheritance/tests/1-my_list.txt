@@ -2,14 +2,14 @@ The ``1-my_list.py`` module
 ===========================
 
 Using ``1-my_list``
-----------------------
+-------------------
 
 Import function from module:
 >>> MyList = __import__('1-my_list').MyList
 
 Test one: If the list is empty
->>> my_list1 = MyList()
->>> my_list1.print_sorted()
+>>> ml = MyList()
+>>> ml.print_sorted()
 []
 
 Test two: Correct Class Type test:
