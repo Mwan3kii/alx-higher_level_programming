@@ -42,23 +42,20 @@ class Base:
         Returns:
             Written json string to a file.
         """
-        if list_objs is None:
-            return "[]"
-
-        else:
-            cls_name = cls.__name__
+        if list_objs is not None:
             list_objs = [obj.to_dictionary() for obj in list_objs]
             json_string = cls.to_json_string(list_objs)
-
+            cls_name = cls.__name__
             filename = "{}.json".format(cls_name)
+
             with open(filename, "w", encoding="utf-8") as file:
                 file.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
         """Converts json string rep to list using loads."""
-        if json_string is None or json_string == "":
-            return "[]"
+        if json_string is None or not json_string:
+            return []
         else:
             return json.loads(json_string)
 
