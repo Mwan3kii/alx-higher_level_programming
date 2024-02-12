@@ -21,6 +21,8 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+        if self.id < 0:
+            raise ValueError("id must be >= 0")
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -78,7 +80,10 @@ class Base:
         if filename:
             with open(filename, 'r') as file:
                 json_string = file.read()
-                return [cls.create(**d) for d in cls.from_json_string(json_string)]
+                return [
+                        cls.create(**d)
+                        for d in cls.from_json_string(json_string)
+                ]
         else:
             return "[]"
 
@@ -107,6 +112,7 @@ class Base:
                 return [cls.create(**row) for row in reader]
         else:
             return "[]"
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         screen = turtle.Screen()
