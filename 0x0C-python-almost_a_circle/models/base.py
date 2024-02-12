@@ -76,17 +76,17 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Returns list of intances from a json file."""
+        from os import path
         cls_name = cls.__name__
-        filename = "{}.json".format(cls_name)
-        if filename:
-            with open(filename, 'r') as file:
-                json_string = file.read()
-                return [
-                        cls.create(**d)
-                        for d in cls.from_json_string(json_string)
-                ]
-        else:
-            return "[]"
+        file = "{}.json".format(cls_name)
+        if not path.isfile(file):
+            return []
+        with open(file, 'r', encoding="utf-8") as f:
+            json_string = f.read()
+            return [
+                    cls.create(**d)
+                    for d in cls.from_json_string(json_string)
+            ]
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
