@@ -48,3 +48,11 @@ class Base:
         filename = "{}.json".format(cls_name)
         with open(filename, "w") as file:
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Converts json string rep to list using loads."""
+        if json_string is None or json_string == "":
+            return "[]"
+        else:
+            return json.loads(json_string)
