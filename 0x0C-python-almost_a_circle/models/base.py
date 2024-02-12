@@ -56,3 +56,10 @@ class Base:
             return "[]"
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Creating a dummy instance."""
+        dummy_instance = cls('width', 'height')
+        dummy_instance.update(**dictionary)
+        return dummy_instance
