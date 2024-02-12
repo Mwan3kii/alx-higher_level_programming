@@ -63,3 +63,15 @@ class Base:
         dummy_instance = cls('width', 'height')
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns list of intances from a json file."""
+        cls_name = cls.__name__
+        filename = "{}.json".format(cls_name)
+        if filename:
+            with open(filename, 'r') as file:
+                json_string = file.read()
+                return [cls.create(**d) for d in cls.from_json_string(json_string)]
+        else:
+            return "[]"
