@@ -62,6 +62,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Creating a dummy instance."""
+        from models.rectangle import Rectangle
+        from models.square import Square
         for key, value in dictionary.items():
             if key not in ["id"]:
                 dictionary[key] = int(value)
