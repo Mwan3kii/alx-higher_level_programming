@@ -38,18 +38,20 @@ class Base:
 
         Args:
             cls: Class to call.
+            list_objs: The list of objects.
 
         Returns:
             Written json string to a file.
         """
-        if list_objs is not None:
-            list_objs = [obj.to_dictionary() for obj in list_objs]
-            json_string = cls.to_json_string(list_objs)
-            cls_name = cls.__name__
-            filename = "{}.json".format(cls_name)
+        if list_objs is None:
+            list_objs = []
+        list_objs = [obj.to_dictionary() for obj in list_objs]
+        json_string = cls.to_json_string(list_objs)
+        cls_name = cls.__name__
+        filename = "{}.json".format(cls_name)
 
-            with open(filename, "w", encoding="utf-8") as file:
-                file.write(json_string)
+        with open(filename, "w", encoding="utf-8") as file:
+            file.write(json_string)
 
     @staticmethod
     def from_json_string(json_string):
