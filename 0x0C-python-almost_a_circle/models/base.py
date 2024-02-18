@@ -118,36 +118,28 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """Draws the rectangles and squares."""
         screen = turtle.Screen()
         screen.bgcolor("white")
         screen.title("Draw Rectangles and Squares")
 
-        pen = turtle.Turtle()
-        pen.speed(2)
-
-        for rect in list_rectangles:
-            pen.penup()
-            pen.goto(rect.x, rect.y)
-            pen.pendown()
-            pen.forward(rect.width)
-            pen.right(90)
-            pen.forward(rect.height)
-            pen.right(90)
-            pen.forward(rect.width)
-            pen.right(90)
-            pen.forward(rect.height)
-            pen.right(90)
-
+        for rectangle in list_rectangles:
+            Base.draw_shape(rectangle)
         for square in list_squares:
-            pen.penup()
-            pen.goto(square.x, square.y)
-            pen.pendown()
-            pen.forward(square.size)
-            pen.right(90)
-            pen.forward(square.size)
-            pen.right(90)
-            pen.forward(square.size)
-            pen.right(90)
-            pen.forward(square.size)
-            pen.right(90)
+            Base.draw_shape(square)
         turtle.done()
+
+    @staticmethod
+    def draw_shape(shape):
+        """Draws shape using Turtle."""
+        turtle.penup()
+        turtle.goto(shape.x, shape.y)
+        turtle.pendown()
+        turtle.color("black")
+        turtle.begin_fill()
+
+        for _ in range(5):
+            turtle.forward(shape.width)
+            turtle.left(90)
+        turtle.end_fill()
+        turtle.penup()
