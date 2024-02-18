@@ -15,6 +15,21 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(ValueError):
             b = Base(-8)
 
+    def setUp(self):
+        Base._Base__nb_objects = 0
+
+    def test_without_id(self):
+        obj1 = Base()
+        obj2 = Base()
+        self.assertEqual(obj1.id, 1)
+        self.assertEqual(obj2.id, 2)
+
+    def test_nb_objects_increment(self):
+        obj1 = Base()
+        self.assertEqual(Base._Base__nb_objects, 1)
+        obj2 = Base()
+        self.assertEqual(Base._Base__nb_objects, 2)
+
     def test_to_json_string(self):
         b = Base()
         self.assertEqual(Base.to_json_string([{'id': 1}]), '[{"id": 1}]')
@@ -40,7 +55,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(len(rectangles), 2)
         self.assertIsInstance(rectangles[0], Rectangle)
         self.assertIsInstance(rectangles[1], Rectangle)
-
 
 if __name__ == '__main__':
     unittest.main()
