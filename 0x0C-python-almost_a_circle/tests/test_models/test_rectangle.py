@@ -44,8 +44,8 @@ class TestRectangle(unittest.TestCase):
             r.y = -3
 
     def test_area(self):
-        r = Rectangle(5, 10)
-        self.assertEqual(r.area(), 50)
+        r = Rectangle(6, 10)
+        self.assertEqual(r.area(), 60)
 
     def test_display(self):
         r = Rectangle(4, 3)

@@ -1,5 +1,6 @@
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 class TestBase(unittest.TestCase):
     def test_init(self):
@@ -7,8 +8,8 @@ class TestBase(unittest.TestCase):
         self.assertIsInstance(b, Base)
 
     def test_init_with_id(self):
-         b = Base(8)
-         self.assertEqual(b.id, 8)
+         b = Base(4)
+         self.assertEqual(b.id, 4)
 
     def test_init_with_negative_id(self):
         with self.assertRaises(ValueError):
@@ -23,6 +24,23 @@ class TestBase(unittest.TestCase):
         b = Base()
         self.assertEqual(Base.from_json_string('[{"id": 1}]'), [{'id': 1}])
         self.assertEqual(Base.from_json_string('[{"id": 2}]'), [{'id': 2}])
+
+    def test_create(self):
+        r1 = Rectangle(3, 5, 1)
+        r1_dict = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dict)
+        self.assertFalse(r1 is r2)
+        self.assertEqual(r1.to_dictionary(), r2.to_dictionary())
+
+    def test_load_from_file(self):
+        r1 = Rectangle(5, 5)
+        r2 = Rectangle(10, 10)
+        Rectangle.save_to_file([r1, r2])
+        rectangles = Rectangle.load_from_file()
+        self.assertEqual(len(rectangles), 2)
+        self.assertIsInstance(rectangles[0], Rectangle)
+        self.assertIsInstance(rectangles[1], Rectangle)
+
 
 if __name__ == '__main__':
     unittest.main()
