@@ -19,7 +19,7 @@ class Square(Rectangle):
     def __str__(self):
         """Returns String representation method of square."""
         return "[Square] ({}) {:d}/{:d} - {:d}".format(
-                self.id, self.x, self.y, self.width
+                self.id, self.x, self.y, self.size
         )
 
     @property

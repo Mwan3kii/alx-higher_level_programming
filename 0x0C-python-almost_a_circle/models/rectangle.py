@@ -50,10 +50,10 @@ class Rectangle(Base):
         return self.__width
 
     @width.setter
-    def width(self, value):
+    def width(self, width):
         """Setter method for width."""
-        self.__validate_greater_than("width", value)
-        self.__width = value
+        self.__validate_greater_than("width", width)
+        self.__width = width
 
     @property
     def height(self):
@@ -61,10 +61,10 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def height(self, value):
+    def height(self, height):
         """Setter method for height."""
         self.__validate_positive_int("height", height)
-        self.__height = value
+        self.__height = height
 
     @property
     def x(self):
@@ -72,10 +72,10 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, value):
+    def x(self, x):
         """Setter method for x."""
-        self.__validate_positive_int("x", value)
-        self.__x = value
+        self.__validate_positive_int("x", x)
+        self.__x = x
 
     @property
     def y(self):
@@ -83,10 +83,10 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, value):
+    def y(self, y):
         """Setter method for y."""
-        self.__validate_positive_int("y", value)
-        self.__y = value
+        self.__validate_positive_int("y", y)
+        self.__y = y
 
     def area(self):
         """Returns the area of the rectangle."""
