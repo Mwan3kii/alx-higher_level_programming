@@ -43,6 +43,7 @@ class Rectangle(Base):
         self.__validate_int(attribute, value)
         if value <= 0:
             raise ValueError("{} must be > 0".format(attribute))
+
     @property
     def width(self):
         """Getter method for width."""
