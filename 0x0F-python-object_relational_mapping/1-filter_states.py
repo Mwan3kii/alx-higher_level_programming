@@ -12,7 +12,7 @@ if __name__ == "__main__":
                          passwd=mysql_password, db=db_name, port=3306)
     cursor = db.cursor()
     cursor.execute("""SELECT * FROM states WHERE name
-                   LIKE 'N%' ORDER BY id ASC""")
+                   LIKE BINARY 'N%' ORDER BY states.id""")
     result = cursor.fetchall()
     for r in result:
         print(r)
