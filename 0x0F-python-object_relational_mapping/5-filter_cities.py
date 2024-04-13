@@ -13,9 +13,8 @@ if __name__ == "__main__":
                          passwd=mysql_password, db=db_name)
     cursor = db.cursor()
     query = """
-        SELECT cities.id, cities.name, states.name
-        FROM cities
-        JOIN states ON state.id=cities.states_id
+        SELECT cities.name
+        FROM cities INNER JOIN states ON state.id=cities.states_id
         WHERE states.name = %s
     """
     cursor.execute(query, (state_name,))
