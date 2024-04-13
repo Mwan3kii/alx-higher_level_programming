@@ -12,7 +12,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
                          passwd=mysql_password, db=db_name)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states WHERE
+                   name = %s ORDER BY id ASC")
     result = cursor.fetchall()
     for r in result:
         print(r)
