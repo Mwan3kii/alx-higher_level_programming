@@ -6,7 +6,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from relationship_state import Base, State
 from relationship_city import City
-from sqlalchemy import (create_engine)
 from sqlalchemy.orm import relationship
 
 
@@ -23,4 +22,4 @@ if __name__ == "__main__":
     for ins in session.query(State).order_by(State.id):
         for city_ins in ins.cities:
             print(city_ins.id, city_ins.name, sep=": ", end="")
-            print(" -> " + city.name)
+            print(" -> " + ins.name)
