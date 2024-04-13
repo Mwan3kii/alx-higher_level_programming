@@ -11,13 +11,14 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
+    state_name = "Louisiana"
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(username, password, db_name))
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.name.like('%a%'))
-              .order_by(State.id).all()
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    new_state = State(name=state_name)
+    session.add(new_state)
+    session.commit()
+    print(new_state.id)
     session.close()
