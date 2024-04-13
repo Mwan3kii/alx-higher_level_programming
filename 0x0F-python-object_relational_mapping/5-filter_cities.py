@@ -15,15 +15,12 @@ if __name__ == "__main__":
     query = """
         SELECT cities.id, cities.name, states.name
         FROM cities
-        JOIN states ON cities.state_id = states.id
+        JOIN states ON state.id=cities.states_id
         WHERE states.name = %s
-        ORDER BY cities.id ASC
     """
     cursor.execute(query, (state_name,))
-    result = cursor.fetchone()[0]
-    if result:
-        print(result)
-    else:
-        print("No cities found for the state of", state_name)
+    result = cursor.fetchall()
+    tmp = list(row[0] for row in result)
+    print(*tmp, sep=", ")
     cursor.close()
     db.close()
