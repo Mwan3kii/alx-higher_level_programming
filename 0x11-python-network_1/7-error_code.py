@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """Takes url sends request and display body of response"""
 import requests
 import sys
