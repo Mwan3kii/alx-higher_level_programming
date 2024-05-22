@@ -20,8 +20,8 @@ request(url, (err, response, body) => {
       }
       const charData = JSON.parse(charBody);
       console.log(charData.name);
-      CharNames(urls, index + 1);
+      charNames(urls, index + 1);
     });
   };
-  CharNames(charUrls);
+  charNames(charUrls);
 });
